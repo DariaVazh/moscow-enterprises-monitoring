@@ -12,15 +12,12 @@ Data is presented through intuitive charts, tables, and interactive maps, with p
 
 Developed as a team student project at SPbGEU in 2025.
 
-## Screenshots
+## Video Demo
 
-![Home Page](screenshots/home.png)
-![Production Monitoring](screenshots/production.png)
-![Ecological Monitoring](screenshots/ecology.png)
-![Interactive Map](screenshots/map.png)
-![Export Analytics](screenshots/export.png)
+[![Full Project Overview]<img width="1443" height="864" alt="image" src="https://github.com/user-attachments/assets/02593295-402b-44c2-9c0c-5bbc0ea0da58" />
+](https://youtu.be/28Pzg3bkgkc)
 
-(Add more screenshots to the `screenshots/` folder as needed)
+Click on the thumbnail to watch the full demo video (overview of all dashboards, filters, maps, and features).
 
 ## Technologies
 
