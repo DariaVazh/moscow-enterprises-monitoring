@@ -8,7 +8,7 @@ Developed as a team student project at SPbGEU in 2025.
 
 ## Video Demo
 
-[![Full Project Overview](https://img.youtube.com/vi/AbC123dEfGh/maxresdefault.jpg)](https://youtu.be/28Pzg3bkgkc)
+[![Full Project Overview]<img width="1447" height="867" alt="image" src="https://github.com/user-attachments/assets/8821de5b-4bf7-4e82-b52c-04c46f098031" />](https://youtu.be/28Pzg3bkgkc)
 
 Click on the thumbnail to watch the full demo video (overview of all dashboards, filters, maps, and features).
 
