@@ -90,7 +90,7 @@ The developed solution focuses on seamless open data integration, user-friendly 
 ### Team
 
 - [Anastasia Ovchinnikova](https://github.com/btwnastya2)
-- Daria Vazhova
+- [Daria Vazhova](https://github.com/DariaVazh)
 - Alina Ershova
 - Yana Reuchenko
 - Sofya Shashina
