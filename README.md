@@ -6,10 +6,11 @@ Data is presented through intuitive charts, tables, and interactive maps, with p
 
 Developed as a team student project at SPbGEU in 2025.
 
-## Screenshots
+## Video Demo
 
+[![Full Project Overview](https://youtu.be/28Pzg3bkgkc)
 
-(Add more screenshots as needed)
+Click on the thumbnail to watch the full demo video (overview of all dashboards, filters, maps, and features).
 
 ## Technologies
 
