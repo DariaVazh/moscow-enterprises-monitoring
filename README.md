@@ -21,26 +21,7 @@ Developed as a team student project at SPbGEU in 2025.
 - **Dash Bootstrap Components** – responsive and modern UI
 
 ## Project Structure
-├── app.py                      # Main Dash application entry point
-├── api_requests.py             # Module for fetching data from public APIs
-├── SQLLL.py                    # Core database management (SQLite operations)
-├── onlyFun2.py                 # Additional analytical functions
-├── country_codes.py            # Country code reference
-├── organizations.db            # SQLite database file
-├── pages/
-│   ├── init.py
-│   ├── category.py
-│   ├── prodaction.py           # Production monitoring page
-│   ├── home.py                 # Home / landing page
-│   ├── ecology.py              # Environmental monitoring page
-│   └── dashboards/
-│       ├── init.py
-│       ├── company.py          # Excel upload functionality
-│       ├── production.py       # Production metrics dashboard
-│       ├── investments.py      # Investment analysis
-│       ├── export/             # Export analytics section
-│       ├── employment/         # Employment analysis
-│       └── employees.py        # Employee-related panel
+<img width="705" height="709" alt="image" src="https://github.com/user-attachments/assets/6cc22523-8dab-4b97-be19-9140d9030f43" />
 
 ## Features
 
@@ -97,15 +78,14 @@ Mobile-responsive interface
 Real-time alert system for critical indicator changes
 Automated report generation module
 
-Team
-
-Anastasia Ovchinnikova
-Darya Vazhova
-Alina Ershova
-Yana Reuchenko
-Sofya Shashina
+### Team
+- Anastasia Ovchinnikova
+- Darya Vazhova
+- Alina Ershova
+- Yana Reuchenko
+- Sofya Shashina
 
 License
-This project is licensed under the MIT License — see the LICENSE file for details.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ⭐ If you like the project, please give it a star!
