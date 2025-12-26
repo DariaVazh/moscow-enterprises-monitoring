@@ -80,7 +80,7 @@ Automated report generation module
 
 ### Team
 - Anastasia Ovchinnikova
-- Darya Vazhova
+- Daria Vazhova
 - Alina Ershova
 - Yana Reuchenko
 - Sofya Shashina
