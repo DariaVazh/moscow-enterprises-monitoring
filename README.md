@@ -1,92 +1,121 @@
-# Moscow Industrial Enterprises Monitoring System
+# Система мониторинга, анализа и визуализации информации о работе предприятий Москвы
 
-An interactive web dashboard built with **Plotly Dash** designed to support the Department of Investment and Industrial Policy of Moscow. The application provides comprehensive monitoring and visualization of key performance indicators for industrial enterprises in Moscow, including revenue, employment, exports, investments, and environmental metrics.
+Наше веб-приложение должно упростить работу Департаменту инвестиционной и промышленной политики Москвы. Дашборд внутри позволяет следить за работой городских предприятий: показывает выручку, занятость, экспорт и экологические показатели в виде понятных графиков и карт. Пользователи могут фильтровать данные по отраслям, сравнивать результаты и экспортировать отчёты для дальнейшего анализа — всё это упрощает принятие решений и поддержку бизнеса.
 
-Data is presented through intuitive charts, tables, and interactive maps, with powerful filtering capabilities by industry, district, and time period. Users can compare enterprises, identify trends, and export reports for further analysis.
+## Содержание
+- [Технологии](#технологии)
+- [Модульная структура проекта](#модульная-структура)
+- [Анализ существующих решений](#анализ-существующих-решений)
+- [Функциональные возможности](#функциональные-возможности)
+- [Источники данных](#источники-данных)
+- [Запуск](#запуск)
+- [Команда проекта](#команда-проекта)
 
-Developed as a team student project at SPbGEU in 2025.
+## Технологии
+- Python 3.x
+- SQLite для хранения данных
+- Pandas для обработки и анализа данных
+- Requests для API-интеграций
+- Plotly
+- Plotly|Dash
 
-## Video Demo
-
-[![Full Project Overview]<img width="1447" height="867" alt="image" src="https://github.com/user-attachments/assets/8821de5b-4bf7-4e82-b52c-04c46f098031" />](https://youtu.be/28Pzg3bkgkc)
-
-Click on the thumbnail to watch the full demo video (overview of all dashboards, filters, maps, and features).
-
-## Technologies
-
-- **Python 3.8+**
-- **Dash** & **Plotly** – interactive web interface and visualizations
-- **Pandas** – data processing and analysis
-- **SQLite** – centralized data storage
-- **Requests** – integration with open data APIs
-- **Dash Bootstrap Components** – responsive and modern UI
-
-## Project Structure
-<img width="705" height="709" alt="image" src="https://github.com/user-attachments/assets/6cc22523-8dab-4b97-be19-9140d9030f43" />
-
-## Features
-
-### Data Management
-- Automated data collection via the Moscow Open Data Portal API
-- Centralized storage in SQLite with upsert mechanism for data freshness
-- Normalized schema supporting over 150 attributes per enterprise
-
-### Analytics Modules
-- **Production Analysis** – monitoring output volumes, sales efficiency, capacity utilization
-- **Financial & Economic Analysis** – revenue/profit dynamics, industry rankings
-- **Investment Monitoring** – tracking investments, sector activity, attractiveness ranking
-- **Export & Foreign Trade** – export volumes, geographic diversification, interactive world map of trade partners
-- **Employment Analysis** – workforce size, average salary trends, segmentation by industry and district
-- **Environmental Monitoring** – emissions tracking, eco-equipment presence, adoption of green technologies
-
-### Geospatial Analytics
-- Interactive map of enterprise locations
-- Territorial industrial potential visualization
-- Spatial display of environmental indicators and risks
-
-### User Interaction
-- Advanced filters (industry, district, year, etc.)
-- Comparative enterprise analysis
-- Export of charts, tables, and reports
-
-## Data Sources
-
-- Primary: [List of enterprises with industrial complex status](https://data.mos.ru/opendata/7710071979-perechen-predpriyatiy-poluchivshih-status-promyshlennogo-kompleksa) (Moscow Open Data Portal)
-- Supplementary: synthetically generated data for demonstration purposes
-
-Future development may include integration with Rosstat, Federal Tax Service, GISIP, and regional environmental registries.
-
-## Installation & Running
-
-### Requirements
-```bash
-pip install dash plotly pandas requests dash-bootstrap-components openpyxl
+## Модульная структура
+```
+├── app.py                 # Основное приложение Dash
+├── api_requests.py        # Модуль взаимодействия с API открытых данных
+├── SQLLL.py              # Основной модуль управления базой данных
+├── onlyFun2.py           # Дополнительные аналитические функции
+├── country_codes.py      # Справочник кодов стран
+├── organizations.db      # Закрытая база данных
+├── pages/                # Страницы веб-интерфейса
+│   ├── __init__.py
+│   ├── category.py        
+│   ├── prodaction.py     # Производственный мониторинг
+│   ├── home.py           # Главная страница
+│   ├── ecology.py        # Экологический мониторинг
+│   └── dashboards/       # Аналитические панели
+│       ├── __init__.py
+│       ├── company.py     # Загрузка Excel-файлов
+│       ├── production.py  # Производственные показатели
+│       ├── investments.py # Инвестиционный анализ
+│       ├── export/        # Экспортная аналитика
+│       ├── employment/    # Анализ занятости
+│       └── employees.py   # Панель для сотрудников
 ```
 
-### Existing Solutions Analysis
-The project draws inspiration from commercial and public platforms such as:
+## Анализ существующих решений
 
-SPARK-Interfax
-Centre for Cities Data Tool
-AMPER
+В ходе работы был проанализирован опыт решения подобных задач на местном и международном уровнях. Было выяснено, что несмортря на множество предложенных вариантов решения проблемы ни один не мог предоставить пользовотелю достойный опыт использования приложения для визуализации данных с возможностью их быстрой актуализации. Наиболее подходящим требованиям рынка оказался сервис [Спарк](https://spark-interfax.ru/#_top), который был выбран ориентиром для разработки нового веб-приложения. 
+Помимо упомянутого сервиса в качестве референсов были рассмотрены такие сервисы как [CENTREFORCITIES](https://www.centreforcities.org/data/data-tool/) и [AMPER](https://www.amper.co/)
 
-The developed solution focuses on seamless open data integration, user-friendly visualization, and rapid updates tailored to Moscow's industrial ecosystem.
-Future Development
+## Функциональные возможности
 
-Integration with additional official data sources
-Predictive analytics using machine learning
-Mobile-responsive interface
-Real-time alert system for critical indicator changes
-Automated report generation module
+### 1. Управление данными
+- Автоматизированный сбор данных через API портала открытых данных Москвы
+- Централизованное хранение в реляционной базе SQLite
+- Механизм upsert для обеспечения актуальности информации
+- Нормализованная структура с более чем 150 атрибутами на предприятие
 
-### Team
-- Anastasia Ovchinnikova
-- Daria Vazhova
-- Alina Ershova
-- Yana Reuchenko
-- Sofya Shashina
+### 2. Аналитические модули
 
-License
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+- Производственный анализ
+  - Мониторинг объемов производства и реализации
+  - Анализ эффективности производственных мощностей
+  - Выявление предприятий с оптимальным соотношением производства и продаж
 
-⭐ If you like the project, please give it a star!
+- Финансово-экономический анализ
+   - Динамика выручки и прибыли 
+   - Рейтинги предприятий по финансовым показателям
+   - Сравнительный анализ по отраслям
+
+- Инвестиционный мониторинг
+   - Учет инвестиций в Москву
+   - Анализ инвестиционной активности по отраслям
+   - Выявление наиболее инвестиционно привлекательных предприятий
+
+- Внешнеэкономическая деятельность
+   - Мониторинг экспортных операций
+   - Анализ географической диверсификации экспорта
+   - Картография стран-импортеров продукции
+     
+ - Анализ трудовых ресурсов
+   - Динамика численности персонала
+   - Мониторинг средней заработной платы
+   - Сегментация по отраслям и округам
+  
+### 3. Экологический мониторинг
+- Учет наличия экологического оборудования
+- Оценка уровня промышленных выбросов
+- Анализ динамики внедрения природоохранных технологий
+- Пространственная визуализация экологических показателей
+
+### 4. Геоаналитика
+- Интерактивная карта расположения предприятий
+- Территориальный анализ промышленного потенциала
+- Визуализация экологических рисков по районам
+
+## Источники данных
+
+В реализации приложения использованы данные из открытой базы данных [mos.ru](https://data.mos.ru/opendata/7710071979-perechen-predpriyatiy-poluchivshih-status-promyshlennogo-kompleksa) и данные сгенерированные искуственно. 
+При дальнейшем развитии проекта более подробные и полные данные можно получить из баз базы Росстат, ФТС, ГИСП, сервисов ФНС, [Реестр объектов контроля Регионального государственного экологического контроля](https://www.mos.ru/eco/function/kontrolno-nadzornaya-deyatelnost/regionalnyi-gosudarstvennyi-ekologicheskii-kontrol-nadzor-v-gorode-moskve/obshaya-informaciya/reestr-obektov-kontrolya/). 
+
+## Запуск
+
+### Предварительные требования
+- Python 3.8 или выше
+- Установленные пакеты: pandas, dash, plotly, dash-bootstrap-components, requests
+
+## Возможности развития проекта
+
+- Интеграция с дополнительными источниками данных
+- Реализация предиктивной аналитики на основе машинного обучения
+- Разработка мобильной версии интерфейса
+- Внедрение системы оповещений о критических изменениях показателей
+- Разработка модуля автоматизированного формирования отчетности
+
+## Команда проекта
+- Анастасия Овчиннникова
+- Дарья Важова
+- Алина Ершова
+- Яна Реученко
+- Софья Шашина
