@@ -10,7 +10,7 @@ An interactive web dashboard built with **Plotly Dash** designed to support the 
 
 Data is presented through intuitive charts, tables, and interactive maps, with powerful filtering capabilities by industry, district, and time period. Users can compare enterprises, identify trends, and export reports for further analysis.
 
-Developed as a team student project at SPbGEU in 2025.
+Developed as a team student project at UNECON in 2025.
 
 ## Video Demo
 
