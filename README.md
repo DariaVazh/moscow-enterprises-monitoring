@@ -70,7 +70,8 @@ Future development may include integration with Rosstat, Federal Tax Service, GI
 
 ### Requirements
 ```bash
-pip install dash plotly pandas requests dash-bootstrap-components openpyxl```
+pip install dash plotly pandas requests dash-bootstrap-components openpyxl
+```
 
 ### Existing Solutions Analysis
 The project draws inspiration from commercial and public platforms such as:
